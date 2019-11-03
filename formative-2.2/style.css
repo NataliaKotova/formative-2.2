@@ -1,7 +1,52 @@
 body {
     padding-top: 5rem;
+    font-family: 'Crimson Text', serif;
   }
   .starter-template {
     padding: 3rem 1.5rem;
     text-align: center;
   }
+.myBackground {
+  background-color: #A37E83;
+}  
+.logo{
+  width:3rem;
+}
+.handwritten {
+  font-family: 'Kristi', cursive;
+}
+.quickView{
+  background-color: white;
+  border: 0.5px solid #737373;
+  font-size:1rem;
+}
+.row {
+  justify-content:center;
+}
+
+.quickView {
+  text-transform: uppercase;
+  width:80%;
+  align-self: center;
+}
+
+a {
+  text-transform: uppercase;
+}
+
+.card {
+  border: none;
+}
+img {
+  max-width:80%;
+  align-self: center;
+  
+}
+
+.frame:hover {
+  border: 0.5px solid #737373;
+}
+@media screen and (min-width: 0px) and (max-width: 765px) 
+{
+  .menu { display: none; }  
+ }

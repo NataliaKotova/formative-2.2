@@ -7,6 +7,7 @@
     <title>Starter Template for Bootstrap</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Kristi&display=swap" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -18,7 +19,7 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-md navbar-dark myBackground fixed-top">
       <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -32,30 +33,118 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
+          
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+                <a id="furniture" class="dropdown-item" href="#">furniture</a>
+                <a id="textile" class="dropdown-item" href="#">textile</a>
+                <a id="homeDecor" class="dropdown-item" href="#">home decor</a>
+                <a id="wallArt" class="dropdown-item" href="#">wall art</a>
             </div>
           </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Color</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                  <a id="white" class="dropdown-item" href="#">white</a>
+                      <a id="blue" class="dropdown-item" href="#">blue</a>
+                      <a id="green" class="dropdown-item" href="#">green</a>
+                      <a id="yellow" class="dropdown-item" href="#">yellow</a>
+                      <a id="brown" class="dropdown-item" href="#">brown</a>
+                      <a id="pink" class="dropdown-item" href="#">pink</a>
+                      <a id="multicolored" class="dropdown-item" href="#">multicolored</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Price range</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a id="price100" class="dropdown-item" href="#">from $10 to $100</a>
+                      <a id="price200" class="dropdown-item" href="#">from $100 to $200</a>
+                      <a id="price400" class="dropdown-item" href="#">from $200 to $400</a>
+                      <a id="priceMore" class="dropdown-item" href="#">from $400 and more</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Price range</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a id="low" class="dropdown-item" href="#">price (low)</a>
+                      <a id="high" class="dropdown-item" href="#">price(high)</a>
+                  </div>
+                </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
-    </nav>
+      
+    </nav> 
 
     <main role="main" class="container">
 
       <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        <img class="logo" src="images/logo.png" alt="">
+        <h1>HOMEWARE STORE</h1>
+        <h2 class="handwritten">Let's create beautiful home...</h2>
+        <div class="menu">
+            <div class="btn-group">
+                
+                <div>
+                    <button type="button" class="btn btn-light dropdown-toggle" id="dropdownMenuCategory" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        category
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuCategory">
+                      <a id="furniture" class="dropdown-item" href="#">furniture</a>
+                      <a id="textile" class="dropdown-item" href="#">textile</a>
+                      <a id="homeDecor" class="dropdown-item" href="#">home decor</a>
+                      <a id="wallArt" class="dropdown-item" href="#">wall art</a>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-light dropdown-toggle" id="dropdownMenuColor" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        color
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuColor">
+                      <a id="white" class="dropdown-item" href="#">white</a>
+                      <a id="blue" class="dropdown-item" href="#">blue</a>
+                      <a id="green" class="dropdown-item" href="#">green</a>
+                      <a id="yellow" class="dropdown-item" href="#">yellow</a>
+                      <a id="brown" class="dropdown-item" href="#">brown</a>
+                      <a id="pink" class="dropdown-item" href="#">pink</a>
+                      <a id="multicolored" class="dropdown-item" href="#">multicolored</a>
+                    </div>
+                  </div>
+                  <div>
+                    <button type="button" class="btn btn-light dropdown-toggle" id="dropdownMenuPrice" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        price range
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuPrice">
+                      <a id="price100" class="dropdown-item" href="#">from $10 to $100</a>
+                      <a id="price200" class="dropdown-item" href="#">from $100 to $200</a>
+                      <a id="price400" class="dropdown-item" href="#">from $200 to $400</a>
+                      <a id="priceMore" class="dropdown-item" href="#">from $400 and more</a>
+                    </div>
+                  </div>
+                  <div>
+                    <button type="button" class="btn btn-light dropdown-toggle" id="dropdownMenuSort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        sort
+                    </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuSort">
+                        <a id="low" class="dropdown-item" href="#">price (low)</a>
+                        <a id="high" class="dropdown-item" href="#">price(high)</a>
+                      </div>
+                  </div>
+                  
+                  <div>
+                      <button type="button" class="btn btn-light" id="reset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          reset
+                      </button>
+                  </div>
+              </div>
+        </div>
+        <div id="homeware" class="row">
+
+        </div>
       </div>
 
     </main><!-- /.container -->
@@ -63,9 +152,10 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   
 
 </body></html>
