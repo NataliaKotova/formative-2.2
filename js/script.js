@@ -285,6 +285,34 @@ function filterPriceMore(array){
     showAllItems(filterResult);
 }
 
+function sortLow() {
+    var sortedHomeware = homeware.sort((function(a, b){
+      if(a.price < b.price) {
+        return -1;
+      }
+      if(a.price > b.price) {
+        return 1;
+      }
+      return 0;
+    }));
+    showAllItems(sortedHomeware);
+    return sortedHomeware;
+  }
+
+  function sortHigh() {
+    var sortedHomeware = homeware.sort((function(a, b){
+      if(a.price < b.price) {
+        return 1;
+      }
+      if(a.price > b.price) {
+        return -1;
+      }
+      return 0;
+    }));
+    showAllItems(sortedHomeware);
+    return sortedHomeware;
+  }
+
 document.getElementById('reset').addEventListener('click', function() {
     showAllItems(homeware);
 });
@@ -415,3 +443,18 @@ document.getElementById('navPriceMore').addEventListener('click', function() {
     filterPriceMore(homeware);
 });
 
+document.getElementById('priceLow').addEventListener('click', function() {
+    sortLow();
+});
+
+document.getElementById('navPriceLow').addEventListener('click', function() {
+    sortLow();
+});
+
+document.getElementById('priceHigh').addEventListener('click', function() {
+    sortHigh();
+});
+
+document.getElementById('navPiceHigh').addEventListener('click', function() {
+    sortHigh();
+});
