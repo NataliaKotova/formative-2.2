@@ -20,20 +20,12 @@
   <body>
 
     <nav class="navbar navbar-expand-md navbar-dark myBackground fixed-top">
-      <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
@@ -72,10 +64,6 @@
                   </div>
                 </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
       </div>
       
     </nav> 
@@ -83,8 +71,10 @@
     <main role="main" class="container">
 
       <div class="starter-template">
-        <img class="logo" src="images/logo.png" alt="">
-        <h1>HOMEWARE STORE</h1>
+        <div>
+          <img class="logo" src="images/logo.png" alt="">
+          <h1 class="header">HOMEWARE STORE</h1>
+        </div>
         <h2 class="handwritten">Let's create beautiful home...</h2>
         <div class="menu">
             <div class="btn-group">
@@ -94,10 +84,10 @@
                         category
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuCategory">
-                      <a id="furniture" class="dropdown-item" href="#">furniture</a>
-                      <a id="textile" class="dropdown-item" href="#">textile</a>
-                      <a id="homeDecor" class="dropdown-item" href="#">home decor</a>
-                      <a id="wallArt" class="dropdown-item" href="#">wall art</a>
+                      <a id="navFurniture" class="dropdown-item" href="#">furniture</a>
+                      <a id="navTextile" class="dropdown-item" href="#">textile</a>
+                      <a id="navHomeDecor" class="dropdown-item" href="#">home decor</a>
+                      <a id="navWallArt" class="dropdown-item" href="#">wall art</a>
                     </div>
                 </div>
                 <div>
@@ -105,13 +95,13 @@
                         color
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuColor">
-                      <a id="white" class="dropdown-item" href="#">white</a>
-                      <a id="blue" class="dropdown-item" href="#">blue</a>
-                      <a id="green" class="dropdown-item" href="#">green</a>
-                      <a id="yellow" class="dropdown-item" href="#">yellow</a>
-                      <a id="brown" class="dropdown-item" href="#">brown</a>
-                      <a id="pink" class="dropdown-item" href="#">pink</a>
-                      <a id="multicolored" class="dropdown-item" href="#">multicolored</a>
+                      <a id="navWhite" class="dropdown-item" href="#">white</a>
+                      <a id="navBlue" class="dropdown-item" href="#">blue</a>
+                      <a id="navGreen" class="dropdown-item" href="#">green</a>
+                      <a id="navYellow" class="dropdown-item" href="#">yellow</a>
+                      <a id="navBrown" class="dropdown-item" href="#">brown</a>
+                      <a id="navPink" class="dropdown-item" href="#">pink</a>
+                      <a id="navMulticolored" class="dropdown-item" href="#">multicolored</a>
                     </div>
                   </div>
                   <div>
@@ -119,10 +109,10 @@
                         price range
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuPrice">
-                      <a id="price100" class="dropdown-item" href="#">from $10 to $100</a>
-                      <a id="price200" class="dropdown-item" href="#">from $100 to $200</a>
-                      <a id="price400" class="dropdown-item" href="#">from $200 to $400</a>
-                      <a id="priceMore" class="dropdown-item" href="#">from $400 and more</a>
+                      <a id="navPrice100" class="dropdown-item" href="#">from $10 to $100</a>
+                      <a id="navPrice200" class="dropdown-item" href="#">from $100 to $200</a>
+                      <a id="navPrice400" class="dropdown-item" href="#">from $200 to $400</a>
+                      <a id="navPriceMore" class="dropdown-item" href="#">from $400 and more</a>
                     </div>
                   </div>
                   <div>

@@ -232,7 +232,7 @@ function showAllItems(array) {
 
 showAllItems(homeware);
 
-//function which is responsible for filtering items by category 
+//function for filtering items by category 
 function filterCategory(array, category) {
     var filterResult = array.filter(function(item) {
       return item.category.toLowerCase() === category;
@@ -247,7 +247,7 @@ function filterCategory(array, category) {
 //     showAllItems (filterResult);
 // }
 
-//function which is responsible for filtering items by color
+//function for filtering items by color
 function filterColor(array, color) {
     var filterResult = array.filter(function(item) {
       return item.color.toLowerCase() === color;
@@ -255,7 +255,7 @@ function filterColor(array, color) {
     showAllItems (filterResult, color);
 }
 
-//function which is responsible for filtering items by price range 
+//function for filtering items by price range 
 
 function filterPrice100(array){
     var filterResult = array.filter(function(item) {
@@ -292,8 +292,14 @@ document.getElementById('reset').addEventListener('click', function() {
 document.getElementById('furniture').addEventListener('click', function() {
     filterCategory(homeware, "furniture");
 });
+document.getElementById('navFurniture').addEventListener('click', function() {
+    filterCategory(homeware, "furniture");
+});
 
 document.getElementById('textile').addEventListener('click', function() {
+    filterCategory(homeware, "textile");
+});
+document.getElementById('navTextile').addEventListener('click', function() {
     filterCategory(homeware, "textile");
 });
 
@@ -301,7 +307,15 @@ document.getElementById('homeDecor').addEventListener('click', function() {
     filterCategory(homeware, "home decor");
 });
 
+document.getElementById('navHomeDecor').addEventListener('click', function() {
+    filterCategory(homeware, "home decor");
+});
+
 document.getElementById('wallArt').addEventListener('click', function() {
+    filterCategory(homeware, "wall art");
+});
+
+document.getElementById('navWallArt').addEventListener('click', function() {
     filterCategory(homeware, "wall art");
 });
 
@@ -309,7 +323,15 @@ document.getElementById('white').addEventListener('click', function() {
     filterColor(homeware, "white");
 });
 
+document.getElementById('navWhite').addEventListener('click', function() {
+    filterColor(homeware, "white");
+});
+
 document.getElementById('blue').addEventListener('click', function() {
+    filterColor(homeware, "blue");
+});
+
+document.getElementById('navBlue').addEventListener('click', function() {
     filterColor(homeware, "blue");
 });
 
@@ -317,7 +339,15 @@ document.getElementById('yellow').addEventListener('click', function() {
     filterColor(homeware, "yellow");
 });
 
+document.getElementById('navYellow').addEventListener('click', function() {
+    filterColor(homeware, "yellow");
+});
+
 document.getElementById('brown').addEventListener('click', function() {
+    filterColor(homeware, "brown");
+});
+
+document.getElementById('navBrown').addEventListener('click', function() {
     filterColor(homeware, "brown");
 });
 
@@ -325,7 +355,15 @@ document.getElementById('pink').addEventListener('click', function() {
     filterColor(homeware, "pink");
 });
 
+document.getElementById('navPink').addEventListener('click', function() {
+    filterColor(homeware, "pink");
+});
+
 document.getElementById('multicolored').addEventListener('click', function() {
+    filterColor(homeware, "multicolored");
+});
+
+document.getElementById('navMulticolored').addEventListener('click', function() {
     filterColor(homeware, "multicolored");
 });
 
@@ -333,7 +371,15 @@ document.getElementById('brown').addEventListener('click', function() {
     filterColor(homeware, "brown");
 });
 
+document.getElementById('navBrown').addEventListener('click', function() {
+    filterColor(homeware, "brown");
+});
+
 document.getElementById('green').addEventListener('click', function() {
+    filterColor(homeware, "green");
+});
+
+document.getElementById('navGreen').addEventListener('click', function() {
     filterColor(homeware, "green");
 });
 
@@ -341,7 +387,15 @@ document.getElementById('price100').addEventListener('click', function() {
     filterPrice100(homeware);
 });
 
+document.getElementById('navPrice100').addEventListener('click', function() {
+    filterPrice100(homeware);
+});
+
 document.getElementById('price200').addEventListener('click', function() {
+    filterPrice200(homeware);
+});
+
+document.getElementById('navPrice200').addEventListener('click', function() {
     filterPrice200(homeware);
 });
 
@@ -349,7 +403,15 @@ document.getElementById('price400').addEventListener('click', function() {
     filterPrice400(homeware);
 });
 
+document.getElementById('navPrice400').addEventListener('click', function() {
+    filterPrice400(homeware);
+});
+
 document.getElementById('priceMore').addEventListener('click', function() {
+    filterPriceMore(homeware);
+});
+
+document.getElementById('navPriceMore').addEventListener('click', function() {
     filterPriceMore(homeware);
 });
 
