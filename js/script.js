@@ -35,7 +35,7 @@ var homeware = [
         photo1: "images/mirror.jpg",
         photo2: "images/bottles1.jpg",
         price:40,
-        category: "Home decor",
+        category: "Homedecor",
         author:""
     },
     {
@@ -63,7 +63,7 @@ var homeware = [
         category:"",
         author: "Kari Shea, Upslash"
     },
-    
+
     {
         name: "Green sofa",
         id: "7",
@@ -139,7 +139,7 @@ var homeware = [
         photo1: "images/picture1.jpg",
         photo2: "images/bottles1.jpg",
         price:40,
-        category: "Wall art",
+        category: "Wallart",
         author:"Kari Shea, Upslash"
     },
     {
@@ -178,7 +178,7 @@ var homeware = [
         photo1: "images/print1.jpg",
         photo2: "images/print2.jpg",
         price:100,
-        category:"Wall art",
+        category:"Wallart",
         author:"Olia Gozha, Upslash"
     },
     {
@@ -191,7 +191,7 @@ var homeware = [
         photo1: "images/pink-print1.jpg",
         photo2: "images/pink-print1.jpg",
         price:40,
-        category:"Wall art",
+        category:"wallart",
         author:"Stephanie Harvey, Upslash"
     },
     {
@@ -204,7 +204,7 @@ var homeware = [
         photo1: "images/basket1.jpg",
         photo2: "images/basket1.jpg",
         price:40,
-        category: "Home decor",
+        category: "Homedecor",
         author:"Agata Create, Upslash"
     },
 ]
@@ -213,39 +213,32 @@ var homeware = [
 
 function showAllItems(array) {
     document.getElementById('homeware').innerHTML = " ";
+
     for(var i = 0; i < array.length; i++) {
-      document.getElementById('homeware').innerHTML+='<div class="col-md-3">'
-      +'<div class="frame">'
-      +'<div class="card m-3">'
-      +'<img class="card-img-top" src="'+ array[i].photo1 +' " alt="Homeware">'
-      +'<div class="card-body">'
-      +'<p class="card-text">' + array[i].name.toUpperCase() + '</p>'
-      +'<p class="card-text">' + "$" + array[i].price + '</p>'
-      +'</div>'
-      +'<button class="quickView">QUICK VIEW</button>'
-      +'</div>'
-      +'</div>'
-      +'</div>'
+        document.getElementById('homeware').innerHTML+='<div class="col-md-3">'
+        +'<div class="frame">'
+        +'<div class="card m-1">'
+        +'<img class="card-img-top" src="'+ array[i].photo1 +' " alt="Homeware">'
+        +'<div class="card-body">'
+        +'<p class="card-text">' + array[i].name.toUpperCase() + '</p>'
+        +'<p class="card-text">' + "$" + array[i].price + '</p>'
+        +'</div>'
+        +'<button class="quickView">QUICK VIEW</button>'
+        +'</div>'
+        +'</div>'
+        +'</div>'
     }
 }
 
-
 showAllItems(homeware);
 
-//function for filtering items by category 
+//function for filtering items by category
 function filterCategory(array, category) {
     var filterResult = array.filter(function(item) {
       return item.category.toLowerCase() === category;
     })
     showAllItems (filterResult, category);
 }
-
-// function filterFurniture(array) {
-//     var filterResult = array.filter(function(item) {
-//       return item.category.toLowerCase() === "furniture";
-//     })
-//     showAllItems (filterResult);
-// }
 
 //function for filtering items by color
 function filterColor(array, color) {
@@ -255,11 +248,11 @@ function filterColor(array, color) {
     showAllItems (filterResult, color);
 }
 
-//function for filtering items by price range 
+//function for filtering items by price range
 
 function filterPrice100(array){
     var filterResult = array.filter(function(item) {
-            return item.price <= 100; 
+            return item.price <= 100;
     })
     showAllItems(filterResult);
 }
@@ -272,46 +265,18 @@ function filterPrice200(array){
 }
 
 function filterPrice400(array){
-    var filterResult = array.filter(function(item) { 
-        return item.price >=200 && item.price <= 399; 
+    var filterResult = array.filter(function(item) {
+        return item.price >=200 && item.price <= 399;
     })
     showAllItems(filterResult);
 }
 
 function filterPriceMore(array){
     var filterResult = array.filter(function(item) {
-        return item.price >=400; 
+        return item.price >=400;
     })
     showAllItems(filterResult);
 }
-
-function sortLow() {
-    var sortedHomeware = homeware.sort((function(a, b){
-      if(a.price < b.price) {
-        return -1;
-      }
-      if(a.price > b.price) {
-        return 1;
-      }
-      return 0;
-    }));
-    showAllItems(sortedHomeware);
-    return sortedHomeware;
-  }
-
-  function sortHigh() {
-    var sortedHomeware = homeware.sort((function(a, b){
-      if(a.price < b.price) {
-        return 1;
-      }
-      if(a.price > b.price) {
-        return -1;
-      }
-      return 0;
-    }));
-    showAllItems(sortedHomeware);
-    return sortedHomeware;
-  }
 
 document.getElementById('reset').addEventListener('click', function() {
     showAllItems(homeware);
@@ -443,18 +408,175 @@ document.getElementById('navPriceMore').addEventListener('click', function() {
     filterPriceMore(homeware);
 });
 
-document.getElementById('priceLow').addEventListener('click', function() {
+
+// var selectedCheckboxes = {
+//     categories: {},
+//     // categories: {
+//     //     "furniture":true,
+//     //     "homeDecor":false
+//     // }
+//     //var obj = {key1: value1, key2: value2};
+//     colors: {},
+// }
+
+var selectedItems = [];
+
+function FilterCriteria() {
+    this.categories = {};//object
+    this.colors = {};//object 
+    this.shouldFilterByCategory = function() {
+        for (var key in this.categories) {
+            if (this.categories.hasOwnProperty(key)) {
+                if(this.categories[key]){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    this.shouldFilterByColor = function() {
+        for (var key in this.colors) {
+            if(this.colors.hasOwnProperty(key)) {
+                if(this.colors[key]){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+}
+
+var selectedCheckboxes = new FilterCriteria();
+
+$(".category").on("click", function() {
+    var selectedCategoryID = jQuery(this).attr('id'); //to get the id of checked checkbox
+    if (jQuery(this).is(":checked")) {
+        selectedCheckboxes.categories[selectedCategoryID] = true;// now we need to stor information in object that attribute checked of this checkbox is checked 
+    }
+    else {
+        selectedCheckboxes.categories[selectedCategoryID] = false;
+    }
+    var filteredProducts = filterCategory(homeware);
+    filteredProducts = filterColor(filteredProducts);
+    showAllItems(filteredProducts);
+    
+});
+
+$(".color").on("click", function() {
+    var selectedColorID = jQuery(this).attr('id'); //to get the id of checked checkbox
+    if (jQuery(this).is(":checked")) {
+        selectedCheckboxes.colors[selectedColorID] = true;// now we need to stor information in object that attribute checked of this checkbox is checked 
+    }
+    else {
+        selectedCheckboxes.colors[selectedColorID] = false;
+    }
+    var filteredProducts = filterCategory(homeware);
+    filteredProducts = filterColor(filteredProducts);
+    showAllItems(filteredProducts);
+});
+
+function filterCategory(products) {
+    var filteredProducts=[];
+    for (var i = 0; i < products.length; i++) {
+        if (selectedCheckboxes.categories[products[i].category.toLowerCase()] ) {
+            filteredProducts.push(products[i]);
+        }  
+
+        //check when none of checkboxes have been chosen
+        if (selectedCheckboxes.shouldFilterByCategory() === false) {
+            filteredProducts.push(products[i]);
+        }
+    }
+    return filteredProducts;
+}
+
+function filterColor(products) {
+    var filteredProducts=[];
+    for (var i = 0; i < products.length; i++) {
+        if (selectedCheckboxes.colors[products[i].color.toLowerCase()] ) {
+            filteredProducts.push(products[i]);
+        } 
+        if (selectedCheckboxes.shouldFilterByColor() === false) {
+            filteredProducts.push(products[i]);
+            
+        }
+    }
+    return filteredProducts;
+}
+
+function sortLow() {
+    //any one is checked
+    var arrayToProcess;
+    if ($('input[type=checkbox]').is(":checked")) { 
+        arrayToProcess = selectedItems;
+    }
+    //none is checked
+    else {
+        arrayToProcess = homeware;
+    }
+    var sortedItems = arrayToProcess.sort((function(a, b){
+        if(a.price < b.price) {
+            return -1;
+        }
+        if(a.price > b.price) {
+            return 1;
+        }
+        return 0;
+        }));
+        showAllItems(sortedItems);
+  }
+  
+document.getElementById('pricelow').addEventListener('click', function() {
     sortLow();
 });
+
+function sortHigh() {
+    var arrayToProcess;
+    if($('input[type=checkbox]').is(":checked")) {
+        arrayToProcess = selectedItems;
+    }
+    else {
+        arrayToProcess = homeware;
+    }
+    var sortedHomeware = arrayToProcess.sort((function(a, b){
+    if(a.price < b.price) {
+    return 1;
+    }
+    if(a.price > b.price) {
+    return -1;
+    }
+    return 0;
+}));
+
+showAllItems(sortedHomeware);
+}
 
 document.getElementById('navPriceLow').addEventListener('click', function() {
     sortLow();
 });
 
-document.getElementById('priceHigh').addEventListener('click', function() {
+document.getElementById('pricehigh').addEventListener('click', function() {
     sortHigh();
 });
 
-document.getElementById('navPiceHigh').addEventListener('click', function() {
-    sortHigh();
-});
+
+// document.getElementById('navPiceHigh').addEventListener('click', function() {
+//     sortHigh();
+// });
+
+function displayItems(array, i){
+    document.getElementById('homeware').innerHTML+='<div class="col-md-3">'
+      +'<div class="frame">'
+      +'<div class="card m-3">'
+      +'<img class="card-img-top" src="'+ array[i].photo1 +' " alt="Homeware">'
+      +'<div class="card-body">'
+      +'<p class="card-text">' + array[i].name.toUpperCase() + '</p>'
+      +'<p class="card-text">' + "$" + array[i].price + '</p>'
+      +'</div>'
+      +'<button class="quickView">QUICK VIEW</button>'
+      +'</div>'
+      +'</div>'
+      +'</div>'
+}
+
+

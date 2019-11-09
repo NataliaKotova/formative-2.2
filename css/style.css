@@ -4,7 +4,10 @@ body {
   }
 .starter-template {
   padding: 3rem 1.5rem;
-  text-align: center;
+  
+}
+.starter-template sidebar-sticky {
+  text-align: left;
 }
 .myBackground {
   background-color: #A37E83;
@@ -12,12 +15,20 @@ body {
 .logo{
   width:3rem;
 }
+.center{
+  text-align: center;
+}
 .logo, .header{
   display:inline-block;
   vertical-align: middle;
+
 }
 .handwritten {
   font-family: 'Kristi', cursive;
+}
+.sidebar{
+  background-color: grey;
+  height: 100%;
 }
 .btn {
   text-transform: uppercase;
@@ -56,3 +67,5 @@ img {
 {
   .menu { display: none; }  
  }
+
+ 

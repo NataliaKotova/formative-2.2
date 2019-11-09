@@ -12,7 +12,10 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
   </head>
@@ -77,10 +80,10 @@
     <main role="main" class="container">
 
       <div class="starter-template">
-        <div>
+        <div class="center">
           <img class="logo" src="images/logo.png" alt="">
           <h1 class="header">HOMEWARE STORE</h1>
-        </div>
+        
         <h2 class="handwritten">Let's create beautiful home...</h2>
         <div class="menu">
             <div class="btn-group">
@@ -109,25 +112,35 @@
                       <a id="navPink" class="dropdown-item" href="#">pink</a>
                       <a id="navMulticolored" class="dropdown-item" href="#">multicolored</a>
                     </div>
+                    <!-- <div>
+                        <select id = "colors" multiple size="3">        
+                          <option value = "white">White</option>
+                          <option value = "blue">Blue</option>
+                          <option value = "green">Green</option>
+                        </select>
+                    </div> -->
                   </div>
                   <div>
                     <button type="button" class="btn btn-light dropdown-toggle" id="dropdownMenuPrice" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         price range
                     </button>
+                    <!-- https://www.w3schools.com/html/tryit.asp?filename=tryhtml_elem_select_multiple -->
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuPrice">
                       <a id="navPrice100" class="dropdown-item" href="#">from $10 to $100</a>
                       <a id="navPrice200" class="dropdown-item" href="#">from $100 to $200</a>
                       <a id="navPrice400" class="dropdown-item" href="#">from $200 to $400</a>
                       <a id="navPriceMore" class="dropdown-item" href="#">from $400 and more</a>
                     </div>
+
+
                   </div>
                   <div>
                     <button type="button" class="btn btn-light dropdown-toggle" id="dropdownMenuSort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         sort
                     </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuSort">
-                        <a id="priceLow" class="dropdown-item" href="#">price (low)</a>
-                        <a id="priceHigh" class="dropdown-item" href="#">price(high)</a>
+                        <a id="pricelow" class="dropdown-item" href="#">price (low)</a>
+                        <a id="pricehigh" class="dropdown-item" href="#">price(high)</a>
                       </div>
                   </div>
                   
@@ -138,8 +151,63 @@
                   </div>
               </div>
         </div>
-        <div id="homeware" class="row">
+      </div>
+        <div class="row">
+        <!-- Sidebar -->
+        <!-- https://stackoverflow.com/questions/43702907/multiple-category-checkbox -->
+            <nav class="col-md-3 d-none d-md-block bg-light sidebar">
+                    <div class="sidebar-sticky">
+                      <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <div>
+                                <h4 id="dropdownMenuCategory">CATEGORY</h4>
+                                <div class="form-check">
+                                    <input class="category" type="checkbox" value="furniture" id="furniture">
+                                    <label class="form-check-label" for="defaultCheck1">FURNITURE</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="category" type="checkbox" value="textile" id="textile">
+                                    <label class="form-check-label" for="defaultCheck1">TEXTILE</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="category" type="checkbox" value="homedecor" id="homedecor">
+                                    <label class="form-check-label" for="defaultCheck1">HOME DECOR</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="category" type="checkbox" value="wallart" id="wallart">
+                                    <label class="form-check-label" for="defaultCheck1">WALL ART</label>
+                                </div>
 
+                                <h4 id="dropdownMenuCategory">COLOR</h4>
+                                <div class="form-check">
+                                    <input class="color" type="checkbox" value="white" id="white">
+                                    <label class="form-check-label" for="defaultCheck1">WHITE</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="color" type="checkbox" value="green" id="green">
+                                    <label class="form-check-label" for="defaultCheck1">GREEN</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="color" type="checkbox" value="brown" id="brown">
+                                    <label class="form-check-label" for="defaultCheck1">BROWN</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="color" type="checkbox" value="multicolored" id="multicolored">
+                                    <label class="form-check-label" for="defaultCheck1">MULTICOLORED</label>
+                                </div>
+
+                            </div>
+                        </li>
+                       
+                      </ul>
+                    </div>
+                  </nav>
+                  <main class="col-md-9">
+                        <div id="homeware" class="row">
+
+                        </div>
+                  </main>
+                
         </div>
       </div>
 
@@ -152,6 +220,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  
+    
 
 </body></html>
