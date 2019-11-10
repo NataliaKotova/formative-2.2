@@ -33,7 +33,7 @@ var homeware = [
         size: "Diametr: 70CM",
         description: "Excellent addition to any interior.",
         photo1: "images/mirror.jpg",
-        photo2: "images/bottles1.jpg",
+        photo2: "images/mirror.jpg",
         price:40,
         category: "Homedecor",
         author:""
@@ -46,6 +46,7 @@ var homeware = [
         size: "71 x 77.5 x 84cm (wxdxh)",
         description: "Sit back and relax in this comfortable armchir.",
         photo1: "images/armchair.jpg",
+        photo2: "images/armchair.jpg",
         price:440,
         category:"Furniture",
         author: "Kari Shea, Upslash"
@@ -58,7 +59,7 @@ var homeware = [
         size: "Height: 30CM, Width: 18CM",
         description: "Beautiful plant, great addition to any interior.",
         photo1: "images/plant.jpg",
-        photo2: "images/bottles1.jpg",
+        photo2: "images/plant.jpg",
         price:30,
         category:"",
         author: "Kari Shea, Upslash"
@@ -66,33 +67,33 @@ var homeware = [
 
     {
         name: "Green sofa",
-        id: "7",
+        id: "6",
         materials: "Velvet",
         color: "Green",
         size: "",
         description: "Excellent addition to any interior.",
         photo1: "images/sofa-green1.jpg",
-        photo2: "images/safa-green2.jpg",
+        photo2: "images/sofa-green2.jpg",
         price:840,
         category: "Furniture",
         author:"Phillip Goldsberry, Upslash"
     },
     {
         name: "Leather sofa",
-        id: "8",
+        id: "7",
         materials: "Leather",
         color: "Brown",
         size: "",
         description: "Excellent addition to any interior.",
         photo1: "images/sofa-brown1.jpg",
-        photo2: "images/sofa-brown2.jpg",
+        photo2: "images/sofa-brown1.jpg",
         price:2000,
         category: "Furniture",
         author:"Paul Weaver, Upslash </br> Kara Eads, Upslash"
     },
     {
         name: "Blanket",
-        id: "9",
+        id: "8",
         materials: "100% cotton",
         color: "White",
         size: "200x200CM",
@@ -105,7 +106,7 @@ var homeware = [
     },
     {
         name: "Chandelier",
-        id: "10",
+        id: "9",
         materials: "Bone",
         color: "White",
         size: "Diametr: 70CM",
@@ -118,7 +119,7 @@ var homeware = [
     },
     {
         name: "Curtains",
-        id: "11",
+        id: "10",
         materials: "OUTER SHELL, 40% MDF, 40% GLASS, 20% ALUMINIUM",
         color: "White",
         size: "Diametr: 70CM",
@@ -131,20 +132,20 @@ var homeware = [
     },
     {
         name: "Picture",
-        id: "12",
+        id: "11",
         materials: "OUTER SHELL, 40% MDF, 40% GLASS, 20% ALUMINIUM",
         color: "Black",
         size: "Diametr: 70CM",
         description: "Excellent addition to any interior.",
         photo1: "images/picture1.jpg",
-        photo2: "images/bottles1.jpg",
+        photo2: "images/picture1.jpg",
         price:40,
         category: "Wallart",
         author:"Kari Shea, Upslash"
     },
     {
         name: "Chair",
-        id: "13",
+        id: "12",
         materials: "OUTER SHELL, 40% MDF, 40% GLASS, 20% ALUMINIUM",
         color: "White",
         size: "",
@@ -157,7 +158,7 @@ var homeware = [
     },
     {
         name: "Armchair",
-        id: "14",
+        id: "13",
         materials: "OUTER SHELL, 40% MDF, 40% GLASS, 20% ALUMINIUM",
         color: "Yellow",
         size: "",
@@ -170,7 +171,7 @@ var homeware = [
     },
     {
         name: "Print",
-        id: "15",
+        id: "14",
         materials: "",
         color: "Yellow",
         size: "",
@@ -183,7 +184,7 @@ var homeware = [
     },
     {
         name: "Print",
-        id: "16",
+        id: "15",
         materials: "",
         color: "Pink",
         size: "",
@@ -196,7 +197,7 @@ var homeware = [
     },
     {
         name: "Basket",
-        id: "17",
+        id: "16",
         materials: "",
         color: "Natural",
         size: "",
@@ -213,17 +214,16 @@ var homeware = [
 
 function showAllItems(array) {
     document.getElementById('homeware').innerHTML = " ";
-
     for(var i = 0; i < array.length; i++) {
         document.getElementById('homeware').innerHTML+='<div class="col-md-3">'
         +'<div class="frame">'
         +'<div class="card m-1">'
         +'<img class="card-img-top" src="'+ array[i].photo1 +' " alt="Homeware">'
-        +'<div class="card-body">'
-        +'<p class="card-text">' + array[i].name.toUpperCase() + '</p>'
-        +'<p class="card-text">' + "$" + array[i].price + '</p>'
+        +'<div class="card-body m-0">'
+        +'<p class="card-text mb-0">' + array[i].name.toUpperCase() + '</p>'
+        +'<p class="card-text mb-0">' + "$" + array[i].price + '</p>'
         +'</div>'
-        +'<button class="quickView">QUICK VIEW</button>'
+        +'<button id="'+(i+1)+'" class="quickView" data-product="'+array[i].id+'" type="button" data-toggle="modal" data-target="#exampleModal">QUICK VIEW</button>'
         +'</div>'
         +'</div>'
         +'</div>'
@@ -280,132 +280,6 @@ function filterPriceMore(array){
 
 document.getElementById('reset').addEventListener('click', function() {
     showAllItems(homeware);
-});
-
-document.getElementById('furniture').addEventListener('click', function() {
-    filterCategory(homeware, "furniture");
-});
-document.getElementById('navFurniture').addEventListener('click', function() {
-    filterCategory(homeware, "furniture");
-});
-
-document.getElementById('textile').addEventListener('click', function() {
-    filterCategory(homeware, "textile");
-});
-document.getElementById('navTextile').addEventListener('click', function() {
-    filterCategory(homeware, "textile");
-});
-
-document.getElementById('homeDecor').addEventListener('click', function() {
-    filterCategory(homeware, "home decor");
-});
-
-document.getElementById('navHomeDecor').addEventListener('click', function() {
-    filterCategory(homeware, "home decor");
-});
-
-document.getElementById('wallArt').addEventListener('click', function() {
-    filterCategory(homeware, "wall art");
-});
-
-document.getElementById('navWallArt').addEventListener('click', function() {
-    filterCategory(homeware, "wall art");
-});
-
-document.getElementById('white').addEventListener('click', function() {
-    filterColor(homeware, "white");
-});
-
-document.getElementById('navWhite').addEventListener('click', function() {
-    filterColor(homeware, "white");
-});
-
-document.getElementById('blue').addEventListener('click', function() {
-    filterColor(homeware, "blue");
-});
-
-document.getElementById('navBlue').addEventListener('click', function() {
-    filterColor(homeware, "blue");
-});
-
-document.getElementById('yellow').addEventListener('click', function() {
-    filterColor(homeware, "yellow");
-});
-
-document.getElementById('navYellow').addEventListener('click', function() {
-    filterColor(homeware, "yellow");
-});
-
-document.getElementById('brown').addEventListener('click', function() {
-    filterColor(homeware, "brown");
-});
-
-document.getElementById('navBrown').addEventListener('click', function() {
-    filterColor(homeware, "brown");
-});
-
-document.getElementById('pink').addEventListener('click', function() {
-    filterColor(homeware, "pink");
-});
-
-document.getElementById('navPink').addEventListener('click', function() {
-    filterColor(homeware, "pink");
-});
-
-document.getElementById('multicolored').addEventListener('click', function() {
-    filterColor(homeware, "multicolored");
-});
-
-document.getElementById('navMulticolored').addEventListener('click', function() {
-    filterColor(homeware, "multicolored");
-});
-
-document.getElementById('brown').addEventListener('click', function() {
-    filterColor(homeware, "brown");
-});
-
-document.getElementById('navBrown').addEventListener('click', function() {
-    filterColor(homeware, "brown");
-});
-
-document.getElementById('green').addEventListener('click', function() {
-    filterColor(homeware, "green");
-});
-
-document.getElementById('navGreen').addEventListener('click', function() {
-    filterColor(homeware, "green");
-});
-
-document.getElementById('price100').addEventListener('click', function() {
-    filterPrice100(homeware);
-});
-
-document.getElementById('navPrice100').addEventListener('click', function() {
-    filterPrice100(homeware);
-});
-
-document.getElementById('price200').addEventListener('click', function() {
-    filterPrice200(homeware);
-});
-
-document.getElementById('navPrice200').addEventListener('click', function() {
-    filterPrice200(homeware);
-});
-
-document.getElementById('price400').addEventListener('click', function() {
-    filterPrice400(homeware);
-});
-
-document.getElementById('navPrice400').addEventListener('click', function() {
-    filterPrice400(homeware);
-});
-
-document.getElementById('priceMore').addEventListener('click', function() {
-    filterPriceMore(homeware);
-});
-
-document.getElementById('navPriceMore').addEventListener('click', function() {
-    filterPriceMore(homeware);
 });
 
 
@@ -505,16 +379,9 @@ function filterColor(products) {
 }
 
 function sortLow() {
-    //any one is checked
-    var arrayToProcess;
-    if ($('input[type=checkbox]').is(":checked")) { 
-        arrayToProcess = selectedItems;
-    }
-    //none is checked
-    else {
-        arrayToProcess = homeware;
-    }
-    var sortedItems = arrayToProcess.sort((function(a, b){
+    var filteredProducts = filterCategory(homeware);
+    filteredProducts = filterColor(filteredProducts);
+    var sortedItems = filteredProducts.sort((function(a, b){
         if(a.price < b.price) {
             return -1;
         }
@@ -531,14 +398,9 @@ document.getElementById('pricelow').addEventListener('click', function() {
 });
 
 function sortHigh() {
-    var arrayToProcess;
-    if($('input[type=checkbox]').is(":checked")) {
-        arrayToProcess = selectedItems;
-    }
-    else {
-        arrayToProcess = homeware;
-    }
-    var sortedHomeware = arrayToProcess.sort((function(a, b){
+    var filteredProducts = filterCategory(homeware);
+    filteredProducts = filterColor(filteredProducts);
+    var sortedHomeware = filteredProducts.sort((function(a, b){
     if(a.price < b.price) {
     return 1;
     }
@@ -564,19 +426,90 @@ document.getElementById('pricehigh').addEventListener('click', function() {
 //     sortHigh();
 // });
 
-function displayItems(array, i){
-    document.getElementById('homeware').innerHTML+='<div class="col-md-3">'
-      +'<div class="frame">'
-      +'<div class="card m-3">'
-      +'<img class="card-img-top" src="'+ array[i].photo1 +' " alt="Homeware">'
-      +'<div class="card-body">'
-      +'<p class="card-text">' + array[i].name.toUpperCase() + '</p>'
-      +'<p class="card-text">' + "$" + array[i].price + '</p>'
-      +'</div>'
-      +'<button class="quickView">QUICK VIEW</button>'
-      +'</div>'
-      +'</div>'
-      +'</div>'
-}
+$('.quickView').on('click', function(){
+    var id = $(this).attr('data-product');
+    for (var i =0; i <homeware.length; i++) {
+        if(homeware[i].id === id) {
+            var homewareProduct = homeware[i];
+        }
+    }
+    console.log(homewareProduct.name);
+    console.log(homewareProduct.category);
+    console.log(homewareProduct.price);
+    console.log(homewareProduct.description);
+        document.getElementById('modalContent').innerHTML
+        ='<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">'
+        +'<div class="modal-dialog" role="document">'
+        +'<div class="modal-content">'
+        +'<div class="modal-header">'
+        // +'<h5 class="modal-title" id="exampleModalLabel"></h5>'
+        +'<button type="button" class="close" data-dismiss="modal" aria-label="Close">'
+        +'<span aria-hidden="true">&times;</span>'
+        +'</button>'
+        +'</div>'
+        +'<div class="modal-body">'
+        +'<div class="row">'
+        +'<div id="carouselExampleIndicators" class="carousel slide col-md-6">'
+        +'<ol class="carousel-indicators">'
+        +'<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>'
+        +'<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>'
+        +'</ol>'
+        +'<div class="carousel-inner">'
+        +'<div class="carousel-item active">'
+        //+'<div class="row">'
+        +'<div  img-center-vertical>'
+        +'<img class="d-block w-100" src="'+homewareProduct.photo1+'" alt="First slide">'
+        +'</div>'
+        //+'</div>'
+        +'</div>'
+        +'<div class="carousel-item ">'
+       // +'<div class="row">'
+        +'<div  img-center-vertical>'
+        +'<img class="d-block w-100" src="'+homewareProduct.photo2+'" alt="Second slide">'
+        +'</div>'
+       // +'</div>'
+        +'</div>'
+        +'<div>'
+        +'</div>'
+        +'</div>'
+        +'<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">'
+        +'<span class="carousel-control-prev-icon" aria-hidden="true"></span>'
+        +'<span class="sr-only">Previous</span>'
+        +'</a>'
+        +'<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">'
+        +'<span class="carousel-control-next-icon" aria-hidden="true"></span>'
+        +'<span class="sr-only">Next</span>'
+        +'</a>'
+        +'</div>'
+        +'<div class="col-md-6">'
+        +'<h2 class="mb-0">'+ homewareProduct.name.toUpperCase() + '</h2></br>'
+        +'<h4 class="mb-0">Price: $'+ homewareProduct.price + '</h4></br>'
+        +'<hr class="mt-0">'
+        +'<span>PRODUCT DESCRIPTION: </br>'+ homewareProduct.description + '</span></br>'
+        
+        +'<div class="mt-3 mb-3">'
+        +'<button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'
+        +'Choose amount</button>'
+        +'<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">'
+        +'<a class="dropdown-item">1</a>'
+        +'<a class="dropdown-item">2</a>'
+        +'<a class="dropdown-item">3</a>'
+        +'<a class="dropdown-item">4</a>'
+        +'</div>'
+        +'<button class="btn pinkBtn ml-1" type="button">'
+        +'ADD TO CART</button>'
+        +'</div>'
+        +'</div>'
+        +'</div>'//carousel slide
+        +'</div>'//row
+        +'</div>'//modal body ENDS
+        +'</div>'
+        +'</div>'
+        +'</div>'
+  
+  })
+
+  
+
 
 

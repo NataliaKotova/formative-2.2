@@ -38,8 +38,9 @@ body {
   border: 0.5px solid #737373;
   font-size:1rem;
 }
-.row {
-  justify-content:center;
+.modal-body .row {
+  /* justify-content:center; */
+  width:50rem;
 }
 .quickView {
   text-transform: uppercase;
@@ -61,6 +62,68 @@ img {
 
 .frame:hover {
   border: 0.5px solid #737373;
+}
+.modal-header{
+  border:none!important;
+}
+.modal-body{
+  width:100%;
+}
+.modal-content{
+  height: 500px;
+}
+.modal-dialog{
+  max-width:1000px;
+  max-height: 700px;
+}
+.row{
+  height:25rem!important;
+  width:100%;
+  margin:auto;
+}
+
+.carousel-item img {
+  max-width: 18rem;
+  margin:auto;
+  max-height:25rem;
+  /* height:25rem; */
+  
+}
+.img-center-vertical {
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 50px;
+  width: 50px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 1px solid grey;
+  background-image: none;
+}
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 25px;
+  color: grey;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 25px;
+  color: grey;
+}
+
+.btn {
+  border-radius:0!important;
+}
+.pinkBtn{
+  background-color: #F2A5B0;
+  color:white;
+  font-weight: bold;
 }
 
 @media screen and (min-width: 0px) and (max-width: 765px) 
